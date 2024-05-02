@@ -1,64 +1,59 @@
 # PASO 1
-# input texto user y lowercase para simplificar
-texto = input("escribe aqui cualquier parrafo mayor a 30 caracteres: ")
+# input user text and lowercase 
+texto = input("Write here any text with 30 characters or more: ")
 texto = texto.lower()
 
-# input user + conteo de letras + declaraciones de result
-a = input("escribe una letra que quieras buscar en el texto: ")
+# input user + letter counting + print appears
+a = input("write a letter you want to search in text: ")
 a = a.lower()
 result1 = texto.count(a)
-print("la cantidad de veces que aparece tu 1ra letra es: ")
-print(result1)
+print(f"your letter appears: {result1} times")
 
-b = input("escribe una segunda letra que quieras buscar en el texto: ")
+b = input("write a second letter you want to search: ")
 b = b.lower()
 result2 = texto.count(b)
-print("la cantidad de veces que aparece tu 2da letra es: ")
-print(result2)
+print(f"your second letter appears: {result2} times")
 
-c = input("escribe la tercera letra que quieras buscar en el texto: ")
+c = input("write a third letter you want to search: ")
 c = c.lower()
 result3 = texto.count(c)
-print("la cantidad de veces que aparece tu 3ra letra es: ")
-print(result3)
+print(f"your third letter appears: {result3} times")
 
 # PASO 2
-# texto a lista en otra variable
+# text to list
 separa = list(texto)
 
-# separacion de palabras
+# word split
 separa = texto.split()
 
-# declaracion de total palabras
-print("el total de palabras de tu texto es de: ")
-print(len(separa))
+# total words in text
+print(f"total words in your text are: {len(separa)}")
 
 # PASO 3
-# primera y ultima letra
+# first and last letter
 primera_letra = texto[0]
 ultima_letra = texto[-1]
-print("la primera letra de tu texto es: ")
-print(primera_letra)
-print("la ultima letra de tu texto es: ")
-print(ultima_letra)
+print(f"first letter in your text is: {primera_letra}")
+print(f"last letter in your text is: {ultima_letra} ")
+
 
 # PASO 4
-# invertir lista
+# list reverse
 separa.reverse()
 
 # unir lista con espacio ME COSTO MUCHO ESTA PARTE, NO DA + declaracion invertida
-print("Tu texto invertido se veria asi: ")
+print("your text in reverse look like this: ")
 print(" ".join(separa))
 
 # PASO 5
 # boolean de python en texto
 # declaracion
 control = "python" in texto
-print("Aparece la palabra 'Python' en el texto? ")
+print("this word appear in text: 'Python'? ")
 
 # lo mas dificil, un diccionario donde haya strings para cada respuesta
-resp = {True: "SI APARECE!", False: "NO APARECE!"}
+resp = {True: "YES IT APPEARS!", False: "NOT APPEAR!"}
 
 # print del control desde el primer caracter hasta el ultimo y despedida
 print(resp[control])
-print("GRACIAS POR PROBAR MI PRIMER CODIGO!")
+print("THANKS FOR TRY MY FIRST CODE")

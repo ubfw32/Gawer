@@ -3,8 +3,9 @@ import os
 import datetime
 import time
 import math
+from pathlib import Path
 
-dir = 'D:\\PROGRAMAR\\PYTHON\\Clases notas\\CLASES\\DIA 9\\Mi_Gran_Directorio'
+dir = Path()
 
 
 # pattern search in texts

@@ -1,59 +1,59 @@
-# PASO 1
-# input user text and lowercase 
-texto = input("Write here any text with 30 characters or more: ")
-texto = texto.lower()
+# step 1
+# input user text and lowercase
+txt = input("Write here any text with 30 characters or more: ")
+txt = txt.lower()
 
 # input user + letter counting + print appears
 a = input("write a letter you want to search in text: ")
 a = a.lower()
-result1 = texto.count(a)
-print(f"your letter appears: {result1} times")
+ans1 = txt.count(a)
+print(f"your letter appears: {ans1} times")
 
 b = input("write a second letter you want to search: ")
 b = b.lower()
-result2 = texto.count(b)
-print(f"your second letter appears: {result2} times")
+ans2 = txt.count(b)
+print(f"your second letter appears: {ans2} times")
 
 c = input("write a third letter you want to search: ")
 c = c.lower()
-result3 = texto.count(c)
-print(f"your third letter appears: {result3} times")
+ans3 = txt.count(c)
+print(f"your third letter appears: {ans3} times")
 
-# PASO 2
+# step 2
 # text to list
-separa = list(texto)
+spl = list(txt)
 
 # word split
-separa = texto.split()
+spl = txt.split()
 
 # total words in text
-print(f"total words in your text are: {len(separa)}")
+print(f"total words in your text are: {len(spl)}")
 
 # PASO 3
 # first and last letter
-primera_letra = texto[0]
-ultima_letra = texto[-1]
-print(f"first letter in your text is: {primera_letra}")
-print(f"last letter in your text is: {ultima_letra} ")
+first_l = txt[0]
+last_l = txt[-1:]
+print(f"first character in your text is: {first_l}")
+print(f"last character in your text is: {last_l} ")
 
 
-# PASO 4
+# step 4
 # list reverse
-separa.reverse()
+spl.reverse()
 
 # unir lista con espacio ME COSTO MUCHO ESTA PARTE, NO DA + declaracion invertida
 print("your text in reverse look like this: ")
-print(" ".join(separa))
+print(" ".join(spl))
 
-# PASO 5
-# boolean de python en texto
-# declaracion
-control = "python" in texto
+# step 5
+# boolean in text
+# declaration
+control = "python" in txt
 print("this word appear in text: 'Python'? ")
 
-# lo mas dificil, un diccionario donde haya strings para cada respuesta
-resp = {True: "YES IT APPEARS!", False: "NOT APPEAR!"}
+# dictionary to print in both cases
+ans4 = {True: "YES IT APPEARS!", False: "NOT APPEAR!"}
 
-# print del control desde el primer caracter hasta el ultimo y despedida
-print(resp[control])
+# print control from last to first character
+print(ans4[control])
 print("THANKS FOR TRY MY FIRST CODE")

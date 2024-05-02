@@ -1,59 +1,41 @@
 import re
 import os
 import datetime
-import shutil
 import time
-from collections import Counter
+import math
 
-#shutil.unpack_archive('Proyecto+Dia+9.zip')
-
-dir = 'D:\\PROGRAMAR\\PYTHON\\Clases notas\\CLASES\\DIA 9\\Mi_Gran_Directorio'#\carpetas\subcarpetas
-
-#lista = os.listdir(dir)
-#print(lista)
-
-def buscador(dir):
-    for carpetas, subcarpetas, archivos in os.walk(dir):
-        for archivo in archivos:
-            codigo = re.findall(r'^\w\w{3}\d{5}', archivo)
-            print(codigo)
-            if codigo is not None:
-                listc = list(Counter(codigo))
-                print(f"Fecha de búsqueda: [{datetime.date.today()}]")
-                print(f"ARCHIVO        NRO.SERIE\n"
-                      f"-------        ----------\n"
-                      f"{archivos}     {codigo}\n")
-                print(f"\n\nNumeros encontrados: {archivo}")
+dir = 'D:\\PROGRAMAR\\PYTHON\\Clases notas\\CLASES\\DIA 9\\Mi_Gran_Directorio'
 
 
+# pattern search in texts
+def searcher(dir):
+    print(f"Search date: [{datetime.date.today()}]")
+    print(f"FILE\t\t\t\tSERIAL N°\n"
+          f"-------\t\t\t\t----------")
+    num = 0
 
-buscador(dir)
+    for dirs, subdirs, files in os.walk(dir):
+        for txt in files:
+            rute = os.path.join(dirs, txt)
+            file = open(rute, 'r')
+            content = file.read()
+            file.close()
+            codes = re.findall(r'N\D{3}-\d{5}', content)
+            for results in codes:
+                print(f'{txt}\t\t{results}')
+                num += 1
 
-'''inicio = time.time()
-buscador(directorio)
-final = time.time()
-duracion = final - inicio
-print(f"Duración de la búsqueda: {duracion}")
+    print(f"\n\nFinded numbers: {num}")
 
 
+# measure the time from start to end of ejecution
+start = time.time()
+searcher(dir)
+end = time.time()
+duration = end - start
 
-        for archivo in archivos:
-            ruta_archivo = os.path.join(subcarpeta, archivo)
-            op = open(ruta_archivo, 'r' )
-            leer = op.read()
-            codigo = re.findall(r'^\w\w{3}\d{5}', leer)
-            if codigo is not None:
-                listc = list(Counter(codigo))
-                print(f"Fecha de búsqueda: [{datetime.date.today()}]")
-                print(f"ARCHIVO        NRO.SERIE\n"
-                      f"-------        ----------\n"
-                      f"{archivos}     {codigo}\n")
-                print(f"\n\nNumeros encontrados: {codigo.count(codigo)}")
-
-carpetas = re.search(r'D\w{9}_\d')
-re.search(r'\w{10}_\d\w')
-'''
-
+# program duration print
+print(f"\n\nSearch duration: {math.ceil(duration)} seconds")
 
 
 

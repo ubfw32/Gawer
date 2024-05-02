@@ -1,5 +1,4 @@
 Hello World!
-
-LES DEJO UNA MUESTRA DE MIS TRABAJOS PRACTICOS DURANTE MI APRENDIZAJE EN PYTHON TOTAL
-ESTOS TRABAJOS FUERON REALIZADOS SIN AYUDA, IMPLEMENTANDO LOS CONOCIMIENTOS ADQUIRIDOS
-ESPERO QUE LES GUSTE!
+Here's a sample of my practical work during my Python learning journey. 
+These tasks were completed without assistance, applying the knowledge I've acquired.
+I hope you like them!
